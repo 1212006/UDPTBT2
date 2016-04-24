@@ -1,5 +1,5 @@
 {
-  "name": "UDPTBT2",
+  "name": "demo",
   "private": true,
   "version": "0.0.0",
   "description": "a Sails application",
@@ -30,8 +30,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/1212006/UDPTBT2.git"
+    "url": "git://github.com/anonymous node/sails user/demo.git"
   },
-  "author": "libravn",
+  "author": "anonymous node/sails user",
   "license": ""
 }
