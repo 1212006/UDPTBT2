@@ -5,7 +5,19 @@
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/angular-toastr.css">
+    <link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+
+    <!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
+    <script type="text/javascript">
+    window.SAILS_LOCALS = { _csrf: "<%= _csrf %>" };
+    </script>
 
     <!--
         Stylesheets and Preprocessors
@@ -35,10 +47,62 @@
     <!--STYLES END-->
   </head>
 
-  <body>
+  <body
+     <div class="container-fluid">
+
+      <!-- Creates the navbar -->
+        <nav class="navbar navbar-default navbar-inverse">
+      
+          <!-- This creates the mechanism for the collapse button -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- This controls the number of lines in the image when the nav collapse -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>-->
+          </button>
+
+          <!-- This is the brand on the left-hand side. -->
+          <a class="navbar-brand" href="/#">LOTA TEAM</a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+
+          <!-- LOGIN FORM -->  
+          <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
+
+              <!-- E M A I L -->
+              <div class="form-group">
+                  <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
+              </div>
+
+              <!-- P A S S W O R D -->
+              <div class="form-group">
+                  <input ng-model="loginForm.password" type="password" placeholder="Password" name="password" class="form-control">
+              </div>
+
+              <!-- S U B M I T -->
+              <button type="submit" class="btn btn-success">
+                <span ng-show="!loginForm.loading">Sign in</span>
+              <!--  <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
+                <span ng-show="loginForm.loading">Signing up...</span>-->
+              </button>
+              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+          </form>
+        </nav>
+      </div>
+
+    <!-- Sidebar -->
+         <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="../sendmessage">Send message</a></li>
+            <li><a href="../messages">Messages</a></li>
+            <li><a href="../friends">Friends</a></li>
+            <li><a href="../sendedmessages">Sended messages</a></li>
+          </ul>
+        </div>
+    </div>
+
+
     <%- body %>
-
-
 
     <!--
         Client-side Templates
