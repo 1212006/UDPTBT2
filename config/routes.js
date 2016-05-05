@@ -40,20 +40,8 @@ module.exports.routes = {
     view: 'signup'
   },
 
-  'POST /signup': 'UserController.create',
+  'POST /signup': 'UserController.signup',
 
-  'GET /sendmessage':{
-    view: 'sendmessage'
-  },
-  'GET /messages':{
-    view: 'messages'
-  },
-  'GET /sendedmessages':{
-    view: 'sendedmessages'
-  },
-  'GET /friends':{
-    view: 'friends'
-  }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

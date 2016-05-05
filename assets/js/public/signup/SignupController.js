@@ -1,4 +1,4 @@
-angular.module('SignupModule').controller('SignupController', ['$scope','$http',function($scope,$http){
+angular.module('SignupModule').controller('SignupController', ['$scope','$http', 'toastr',function($scope,$http, toastr){
 	
 	//set-up loading state 
 	$scope.signupForm ={
@@ -12,16 +12,24 @@ angular.module('SignupModule').controller('SignupController', ['$scope','$http',
 		$http.post('/signup',{
 
 			name: $scope.signupForm.name,
-			title: $scope.signupForm.title,
 			email: $scope.signupForm.email,
 			password: $scope.signupForm.password
 
 		})
 		.then(function onSuccess(){
 			window.location = '/user';
+			console.log(sailsResponse);
 		})
 		.catch(function onError(sailsResponse){
-			console.log(sailsResponse);
+
+			//bat loi trung email
+			
+			var emailAddressAlreadyInUse = sailsResponse.status == 409;
+			if(emailAddressAlreadyInUse){
+				toastr.error('That email has been used, pls try again.', 'error');
+				$scope.signupForm.loading = false;
+				return;
+			}
 		})
 		.finally(function eitherWay(){
 			$scope.signupForm.location = false;
