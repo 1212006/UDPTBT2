@@ -1,17 +1,17 @@
-# Homework 2 - *Name of App*
+# Homework 2 - LOTA Messenger
 
-**Name of your app** Đây là trang web cho phép người dùng gửi tin nhắn. Thời gian nộp: 0h ngày 27/4.
+LOTA Messenger - Đây là trang web cho phép người dùng gửi tin nhắn. Thời gian nộp: 0h ngày 27/4.
 
-Danh sách sinh viên: **Your Name Here**
+Danh sách sinh viên: 1212006 Nguyễn Đức Anh - 1212437 Phan Ngọc Triều
 
-URL: **Insert your Heroku URL here**
+URL: https://mighty-fjord-73267.herokuapp.com/
 
 ## Chức năng
 
 Danh sách chức năng **bắt buộc**:
 
-* [ ] Đăng ký tài khoản bằng email, password, và tên.
-* [ ] Đăng nhập bằng email và password.
+* [x] Đăng ký tài khoản bằng email, password, và tên.
+* [x] Đăng nhập bằng email và password.
 * [ ] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi.
 * [ ] Tin nhắn chưa đọc phải được làm nổi bật hơn các tin nhắn khác.
 * [ ] Nhấn vào nút "xem danh sách bạn" sẽ chuyển người dùng đến trang liệt kê danh sách người dùng cùng với các chức năng thêm bạn.
@@ -38,7 +38,7 @@ Danh sách chức năng **phụ** đã làm nhưng không được liệt kê �
 Các chuẩn đầu ra cần thực hiện:
 * [ ] Git với Centralize Workflow
 * [ ] Git theo Feature Branch Workflow
-* [ ] Git theo Feature Branch Workflow có Pull Request
+* [x] Git theo Feature Branch Workflow có Pull Request
 * [ ] Git theo Gitflow Workflow
 ## Video Walkthrough
 
