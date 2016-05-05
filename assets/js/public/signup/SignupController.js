@@ -17,7 +17,7 @@ angular.module('SignupModule').controller('SignupController', ['$scope','$http',
 
 		})
 		.then(function onSuccess(){
-			window.location = '/user';
+			window.location = '/';
 			console.log(sailsResponse);
 		})
 		.catch(function onError(sailsResponse){
@@ -27,12 +27,11 @@ angular.module('SignupModule').controller('SignupController', ['$scope','$http',
 			var emailAddressAlreadyInUse = sailsResponse.status == 409;
 			if(emailAddressAlreadyInUse){
 				toastr.error('That email has been used, pls try again.', 'error');
-				$scope.signupForm.loading = false;
 				return;
 			}
 		})
 		.finally(function eitherWay(){
-			$scope.signupForm.location = false;
+			$scope.signupForm.loading = false;
 		})
 	}
 }]);
