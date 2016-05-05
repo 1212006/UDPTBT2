@@ -33,6 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /': 'PageController.showHomePage',
+  'GET /#': 'PageController.showHomePage',
   
   'GET /signup':{view: 'signup'},
 

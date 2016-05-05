@@ -33,7 +33,7 @@ var jsFilesToInject = [
   'js/dependencies/**/*.js',
   'js/public/signup/SignupModule.js',
   'js/public/homepage/HomepageModule.js',
-  'js/private/dashboard/DashboardModule.js',
+  'js/private/DashboardModule.js',
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js'
